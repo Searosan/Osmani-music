@@ -30,33 +30,34 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(other_filters2)
-async def start(_, message: Message):
-        await message.reply_text(
-        f"""**👋Salama'Aniga Waxaan Ahay 𝙊𝙨𝙢𝙖𝙣𝙞 𝘽𝙤𝙩 Botkaan 
-        Waxa aad gashan kartaa Oo ku isticmaali kartaa Group kaaga.
-        [Qofka Sameeyey Botkaan](https://t.me/osmanibots)
-Thanks to add me 😇**
-        """,
+@Client.on_message(command("start") & filters.private & ~filters.edited)
+async def start_(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/02e51c229a2867e13c21e.jpg",
+        caption=f"""**👋Salama'Aniga Waxaan Ahay 𝙊𝙨𝙢𝙖𝙣𝙞 𝘽𝙤𝙩 Botkaan 
+        Waxa aad gashan kartaa Oo ku isticmaali kartaa Group kaaga.!.....
+😎  Real bot owner [Ribaj](t.me/ribajosmani)
+Powered By [Ribaj Global](t.me/meribaj) ...
+**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Sameyaha", url="https://t.me/meribaj"
+                        "✪𝗦𝗮𝗺𝗲𝘆𝗮𝗵𝗮✪", url="https://t.me/meribaj"
                     ),
                     InlineKeyboardButton(
-                        "𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗟𝗶𝘀𝘁🧰", url="https://telegra.ph/%F0%9D%99%8A%F0%9D%99%A8%F0%9D%99%A2%F0%9D%99%96%F0%9D%99%A3%F0%9D%99%9E-%F0%9D%98%BD%F0%9D%99%A4%F0%9D%99%A9-02-19"
+                        "❓ 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗟𝗶𝘀𝘁 ❓", url="https://telegra.ph/%F0%9D%99%8A%F0%9D%99%A8%F0%9D%99%A2%F0%9D%99%96%F0%9D%99%A3%F0%9D%99%9E-%F0%9D%98%BD%F0%9D%99%A4%F0%9D%99%A9-02-19"
                     )
                   ],[
                     InlineKeyboardButton(
-                       " 🇸🇴𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url="https://t.me/osmanigroupbot"
+                       " 🇸🇴 𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url="https://t.me/osmanigroupbot"
                     ),
                     InlineKeyboardButton(
-                        "𝗖𝗵𝗮𝗻𝗻𝗲𝗹📢", url="https://t.me/osmanibots"
+                        "𝗖𝗵𝗮𝗻𝗻𝗲𝗹 📢", url="https://t.me/osmanibots"
                     )
                 ],[
                     InlineKeyboardButton(
-                        "➕ 𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 ➕",
+                        "➕ 𝗔𝗱𝗱 𝗢𝘀𝗺𝗮𝗻𝗶𝗣𝗹𝗮𝘆𝗲𝗿 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽 ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ]
